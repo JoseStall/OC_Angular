@@ -13,8 +13,6 @@ export class AppareilComponent implements OnInit {
     @Input() appareilStatus: string;
     @Input() index: number;
 
-
-
     constructor(private appareilService: AppareilService) { }
 
     ngOnInit() {
