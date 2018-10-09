@@ -6,31 +6,36 @@ import { MonPremierComponent } from './mon-premier/mon-premier.component';
 import { AppareilComponent } from './appareil/appareil.component';
 import { FormsModule } from '@angular/forms';
 import { AppareilService } from './services/appareil.service';
+import { AuthService } from './services/auth.service'
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
-import { Routes } from '@angular/router';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 
 const appRoutes: Routes = [
-  { path: 'appareils', component: AppareilViewComponent },
-  { path: 'auth', component: AuthComponent },
-  { path: '', component: AppareilViewComponent }
+{ path: 'appareils', component: AppareilViewComponent },
+{ path: 'appareils/:id', component: SingleAppareilComponent },
+{ path: 'auth', component: AuthComponent },
+{ path: '', component: AppareilViewComponent }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MonPremierComponent,
-    AppareilComponent,
-    AuthComponent,
-    AppareilViewComponent
+  AppComponent,
+  MonPremierComponent,
+  AppareilComponent,
+  AuthComponent,
+  AppareilViewComponent,
+  SingleAppareilComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(appRoutes)
+  BrowserModule,
+  FormsModule,
+  RouterModule.forRoot(appRoutes)
   ],
-  providers: [AppareilService],
+  providers: [AppareilService,
+  AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
