@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	counterSubscription: Subscription;
 
 	ngOnInit() {
-		const counter = Observable.interval(1000);
+		const counter = interval(1000);
 		this.counterSubscription = counter.subscribe(
 			(value) => {
 				this.secondes = value;
@@ -36,4 +36,5 @@ export class AppComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		this.counterSubscription.unsubscribe();
 	}
+
 }
