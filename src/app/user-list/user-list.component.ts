@@ -10,6 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserListComponent implements OnInit, OnDestroy {
 
+
   users: User[];
   userSubscription: Subscription;
 
