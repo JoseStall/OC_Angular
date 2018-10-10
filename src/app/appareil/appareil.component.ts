@@ -23,16 +23,16 @@ export class AppareilComponent implements OnInit {
         return this.appareilStatus;
     }
     getColor() {
-        if(this.appareilStatus === 'allumé') {
+        if (this.appareilStatus === 'allumé') {
             return 'green';
-        } else if(this.appareilStatus === 'éteint') {
+        } else if (this.appareilStatus === 'éteint') {
             return 'red';
         }
     }
     onSwitch() {
-        if(this.appareilStatus === 'allumé') {
+        if (this.appareilStatus === 'allumé') {
             this.appareilService.switchOffOne(this.index);
-        } else if(this.appareilStatus === 'éteint') {
+        } else if (this.appareilStatus === 'éteint') {
             this.appareilService.switchOnOne(this.index);
         }
     }

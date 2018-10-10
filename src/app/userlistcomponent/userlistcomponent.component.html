@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngfor="let user of users">
+    <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+    <p>{{ user.email }}</p>
+    <p>Cette persone préfère le {{ user.drinkPreference }}</p>
+    <p *ngif="user.hobbies && user.hobbies.length > 0">
+      Cette personne a des hobbies !
+      <span *ngfor="let hobby of user.hobbies">{{ hobby }} - </span>
+    </p>
+  </li>
+</ul>
